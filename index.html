@@ -1,0 +1,166 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Grocery shopping list</title>
+
+    <!-- INCLUDING JQUERY-->
+    <script src="jquery.min.js"></script>
+
+    <!-- CSS FOR STYLING THE PAGE -->
+    <style>
+        table {
+            margin: 0 auto;
+            font-size: large;
+            border: 1px solid black;
+        }
+        
+        #h1 {
+            text-align: center;
+            color: #006600;
+            font-size: xx-large;
+            font-family: 'Gill Sans', 'Gill Sans MT', ' Calibri', 'Trebuchet MS', 'sans-serif';
+            float: left;
+            padding-left: 40%;
+            position: relative;
+            animation-name: example;
+            animation-duration: 4s;
+            animation-direction: reverse;
+            animation-iteration-count: infinite;
+            font-size: 2em;
+        }
+        
+        td {
+            background-color: #9ac76f;
+            border: 1px solid black;
+        }
+        
+        td:hover {
+            background-color: #43f743;
+        }
+        
+        th,
+        td {
+            font-weight: bold;
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        td {
+            font-weight: lighter;
+        }
+        
+        .head1 {
+            border: 2px solid black;
+            background-image: url(https://www.elohimart.com/wp-content/uploads/2020/07/Banner-2.1.jpg);
+            transition: background-image .5s;
+            text-align: center;
+            width: 100%;
+            height: 20%;
+        }
+        
+        .head1:hover {
+            background-image: url(https://capestylemag.com/wp-content/uploads/2020/06/groceries-green-reusable-shopping-bag-wood-table_8087-1457.jpg);
+        }
+        /* section {
+            background-image: "https: //th.bing.com/th/id/OIP.V-bskPJrOE-bEddx8e7PoAHaEK?w=318&h=185&c=7&o=5&dpr=1.56&pid=1.7";
+        } */
+        
+        body {
+            background-image: url(https://wallpapercave.com/wp/wp3152211.jpg);
+            background-size: cover;
+        }
+        
+        .btn {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="head1">
+
+            <!-- <img src="https://th.bing.com/th/id/OIP.9JF5bJ-0lO_2H4poCrrigAAAAA?pid=Api&rs=1" alt="" height="20%" id="pic1"> -->
+
+            <h1 id="h1">Grocery Shopping list</h1>
+
+        </div>
+        <div class="btn">
+            <button type="" onclick="index.html">reload</button>
+        </div>
+
+        <!-- TABLE CONSTRUCTION-->
+        <table id='table'>
+            <!-- HEADING FORMATION -->
+            <tr>
+                <th>slNo</th>
+                <th>Name of item</th>
+                <th>quantity</th>
+                <th>unit</th>
+                <th>department</th>
+
+                <th>notes</th>
+            </tr>
+
+            <script>
+                $(document).ready(function() {
+
+                    // FETCHING DATA FROM JSON FILE 
+                    $.getJSON('grocery.json',
+                        function(data) {
+                            var student = '';
+
+                            // ITERATING THROUGH OBJECTS 
+                            $.each(data, function(key, value) {
+
+                                //CONSTRUCTION OF ROWS HAVING 
+                                // DATA FROM JSON OBJECT 
+                                student += '<tr>';
+                                student += '<td>' +
+                                    value.slNo + '</td>';
+                                // student += '<tr>';
+                                student += '<td>' +
+                                    value.name + '</td>';
+
+
+
+
+
+                                student += '<td>' +
+                                    value.quantity + '</td>';
+                                student += '<td>' +
+                                    value.unit + '</td>';
+                                student += '<td>' +
+                                    value.department + '</td>';
+                                // student += '<td>' +
+                                //     value.quantity + '</td>';
+                                student += '<td>' +
+                                    value.notes + '</td>';
+                                student += '</tr>';
+                            });
+
+                            //INSERTING ROWS INTO TABLE 
+                            $('#table').append(student);
+                        });
+                });
+            </script>
+    </section>
+
+</body>
+
+</html>

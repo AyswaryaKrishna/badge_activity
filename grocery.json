@@ -1,0 +1,14 @@
+ [
+     { "slNo": "1", "name": "Tomoto", "department": "Vegitable", "unit": "kg", "quantity": "1", "notes": "fresh ,ripen" },
+     { "slNo": "2", "name": "Onion", "department": "Vegitable", "unit": "kg", "quantity": "2", "notes": "fresh,big in size" },
+     { "slNo": "3", "name": "Potato", "department": "Vegitable", "unit": "kg", "quantity": "1", "notes": "fresh,small in size" },
+     { "slNo": "4", "name": "Body wash", "department": "Health", "unit": "number", "quantity": "3", "notes": "pears,250g" },
+     { "slNo": "5", "name": "Hand wash", "department": "Health", "unit": "number", "quantity": "2", "notes": "alcohol content > 30%,250ml" },
+     { "slNo": "6", "name": "Dettol", "department": "Health", "unit": "number", "quantity": "3", "notes": "250ml" },
+
+     { "slNo": "7", "name": "chips", "department": "Snack", "unit": "number", "quantity": "2", "notes": "1 kg packets,banana" },
+     { "slNo": "8", "name": "Water color", "department": "Stationary", "unit": "number", "quantity": "1", "notes": "12 color combo" },
+     { "slNo": "9", "name": "Note book", "department": "stationary", "unit": "number", "quantity": "4", "notes": "unruled,A4 size" }
+
+
+ ]
